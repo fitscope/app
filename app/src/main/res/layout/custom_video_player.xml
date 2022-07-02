@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/panel"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/videoViewRootLay"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/pure_black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <!--app:layout_constraintDimensionRatio="w,16:9"-->
+        <VideoView
+            android:id="@+id/videoView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="w,16:9"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/mainImgView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        android:visibility="invisible"
+        app:layout_constraintDimensionRatio="16:9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/onboarding_test_full" />
+
+
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/play_pause_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_pause"
+        android:padding="12pt"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/video_current_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp_12"
+        android:text="00:00"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/videoViewRootLay"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/video_duration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp_12"
+        android:text="00:00"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/videoViewRootLay"
+        app:layout_constraintEnd_toStartOf="@id/enter_exit_fullscreen_button" />
+
+    <androidx.appcompat.widget.AppCompatSeekBar
+        android:id="@+id/range_slider"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:contentDescription=""
+        android:thumbTint="@color/white"
+        android:valueFrom="0.0"
+        android:valueTo="100.0"
+        app:layout_constraintBottom_toBottomOf="@id/video_duration"
+        app:layout_constraintEnd_toStartOf="@id/video_duration"
+        app:layout_constraintStart_toEndOf="@id/video_current_time"
+        app:layout_constraintTop_toTopOf="@id/video_duration"
+        app:values="@array/slider" />
+
+    <ImageView
+        android:id="@+id/enter_exit_fullscreen_button"
+        android:layout_width="12pt"
+        android:layout_height="12pt"
+        android:layout_marginEnd="@dimen/dp_12"
+        android:layout_marginBottom="@dimen/dp_12"
+        android:src="@drawable/enlarge"
+        app:layout_constraintBottom_toBottomOf="@+id/videoViewRootLay"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!--    <include-->
+    <!--        android:id="@+id/aboutvideo_icon_lay"-->
+    <!--        layout="@layout/aboutvideo_icon_lay" />-->
+
+    <androidx.mediarouter.app.MediaRouteButton
+        android:id="@+id/media_route_button"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:actionProviderClass="androidx.mediarouter.app.MediaRouteActionProvider"
+        app:layout_constraintBottom_toBottomOf="@id/mVideoQuality"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:mediaRouteButtonTint="@color/white" />
+
+
+    <ImageView
+        android:id="@+id/mVideoQuality"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp_12"
+        android:src="@drawable/ic_hd_img"
+        app:layout_constraintEnd_toStartOf="@id/media_route_button"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/ivSchedule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="6pt"
+        app:layout_constraintBottom_toBottomOf="@id/mVideoQuality"
+        app:layout_constraintEnd_toStartOf="@id/mVideoQuality"
+        app:layout_constraintTop_toTopOf="@id/mVideoQuality"
+        app:srcCompat="@drawable/schedule"
+        app:tint="@color/white" />
+
+    <ImageView
+        android:id="@+id/ivCompelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="6pt"
+        app:layout_constraintBottom_toBottomOf="@id/ivSchedule"
+        app:layout_constraintEnd_toStartOf="@id/ivSchedule"
+        app:layout_constraintTop_toTopOf="@id/ivSchedule"
+        app:srcCompat="@drawable/ic_check_circle_img"
+        app:tint="@color/white" />
+
+    <ImageView
+        android:id="@+id/ivDownloding"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="6pt"
+        app:layout_constraintBottom_toBottomOf="@id/ivCompelete"
+        app:layout_constraintEnd_toStartOf="@id/ivCompelete"
+        app:layout_constraintTop_toTopOf="@id/ivCompelete"
+        app:srcCompat="@drawable/download_img"
+        app:tint="@color/white" />
+
+
+    <ImageView
+        android:id="@+id/ivSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="6pt"
+        app:layout_constraintBottom_toBottomOf="@id/ivDownloding"
+        app:layout_constraintEnd_toStartOf="@id/ivDownloding"
+        app:layout_constraintTop_toTopOf="@id/ivDownloding"
+        app:srcCompat="@drawable/ic_group_53"
+        app:tint="@color/white" />
+
+    <ImageView
+        android:id="@+id/ivFav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="6pt"
+        app:layout_constraintBottom_toBottomOf="@id/ivSave"
+        app:layout_constraintEnd_toStartOf="@id/ivSave"
+        app:layout_constraintTop_toTopOf="@id/ivSave"
+        app:srcCompat="@drawable/ic_star_img"
+        app:tint="@color/white" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

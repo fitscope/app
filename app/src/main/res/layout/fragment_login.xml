@@ -1,0 +1,109 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.mobulous.fragments.AuthFragment.LoginFragment">
+
+    <ImageView
+        android:id="@+id/ivBackLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_24"
+        android:layout_marginTop="@dimen/dp_30"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_path_23" />
+
+    <TextView
+        android:id="@+id/textView3"
+        style="@style/normaltxt_22sp_bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_35"
+        android:text="Sign in"
+        android:textSize="@dimen/sp_22"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivBackLogin" />
+
+    <EditText
+        android:id="@+id/edt_email_Login"
+        style="@style/Edittxt_16sp_Regular"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_45"
+        android:layout_marginStart="@dimen/dp_38"
+        android:layout_marginTop="@dimen/dp_24"
+        android:layout_marginEnd="@dimen/dp_38"
+        android:hint="Email"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <EditText
+        android:id="@+id/edt_pass_Login"
+        style="@style/Edittxt_16sp_Regular"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_45"
+        android:layout_marginTop="@dimen/dp_16"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintEnd_toEndOf="@+id/edt_email_Login"
+        app:layout_constraintStart_toStartOf="@+id/edt_email_Login"
+        app:layout_constraintTop_toBottomOf="@+id/edt_email_Login" />
+
+    <Switch
+        android:id="@+id/switch1_Login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_16"
+        android:padding="@dimen/dp_2"
+        app:layout_constraintStart_toStartOf="@+id/edt_pass_Login"
+        app:layout_constraintTop_toBottomOf="@+id/edt_pass_Login" />
+
+    <TextView
+        android:id="@+id/tv_showPassword_SignUp"
+        style="@style/normaltxt_14spSemibold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_16"
+        android:text="Show Password"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintBottom_toBottomOf="@+id/switch1_Login"
+        app:layout_constraintStart_toEndOf="@+id/switch1_Login"
+        app:layout_constraintTop_toTopOf="@+id/switch1_Login" />
+
+    <Button
+        android:id="@+id/signup_btn_Login"
+        style="@style/normaltxt_16sp_segui_semi_bold"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:layout_marginStart="@dimen/dp_38"
+        android:layout_marginTop="@dimen/dp_32"
+        android:layout_marginEnd="@dimen/dp_38"
+        android:background="@drawable/drawable_common_rectangle"
+        android:text="CONTINUE"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_16"
+        app:backgroundTint="@color/red"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_showPassword_SignUp" />
+
+    <TextView
+        android:id="@+id/tv_restpwd_Login"
+        style="@style/normaltxt_14sp_bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_27"
+        android:text="@string/reset_password"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintEnd_toEndOf="@+id/signup_btn_Login"
+        app:layout_constraintStart_toStartOf="@+id/signup_btn_Login"
+        app:layout_constraintTop_toBottomOf="@+id/signup_btn_Login" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

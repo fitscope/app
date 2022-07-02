@@ -1,0 +1,36 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.mobulous.fragments.dashboardBottomNavFrgs.ProgramsFrg">
+
+    <include
+        android:id="@+id/ProgramToolbar"
+        layout="@layout/calendar_cus_appbar" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/program_tab_lay"
+        style="@style/TabLayouy_Style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:tabIndicatorFullWidth="false"
+        app:tabGravity="start"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ProgramToolbar"
+        app:tabTextAppearance="@style/MyTabLayoutTextAppearance" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewpagr"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/program_tab_lay" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

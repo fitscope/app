@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/toolbar_color">
+
+    <ImageView
+        android:id="@+id/ivDrawer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_8"
+        android:padding="5dp"
+        android:src="@drawable/menu"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:padding="12dp"
+        android:src="@drawable/back_arrow"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/ivMainLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:src="@drawable/mainlogo"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/ivDrawer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ivDrawer"
+        app:layout_constraintTop_toTopOf="@+id/ivDrawer" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        style="@style/normaltxt_18spbold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:maxWidth="@dimen/dp_300"
+        android:padding="5dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/ivDrawer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ivDrawer"
+        app:layout_constraintTop_toTopOf="@+id/ivDrawer"
+        tools:text="dfbdfbdjfbsdjfbsdfjdbfjhsdfbjsdfbsdjhb" />
+
+    <ImageView
+        android:id="@+id/iv_mainNotification"
+        android:layout_width="wrap_content"
+        android:padding="10dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:src="@drawable/notification"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/ivDrawer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ivDrawer" />
+
+<!--    <ImageView-->
+<!--        android:id="@+id/notification_dot"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:src="@drawable/red_dot"-->
+<!--        android:visibility="invisible"-->
+<!--        app:layout_constraintBottom_toBottomOf="@id/iv_mainNotification"-->
+<!--        app:layout_constraintEnd_toEndOf="@id/iv_mainNotification"-->
+<!--        app:layout_constraintStart_toEndOf="@id/iv_mainNotification" />-->
+
+    <ImageView
+        android:id="@+id/iv_corner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:src="@drawable/down_arrow"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/ivMainLogo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ivMainLogo" />
+
+    <ImageView
+        android:id="@+id/ivDots"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:padding="12dp"
+        android:src="@drawable/whitedots"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/ivMainLogo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ivMainLogo" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

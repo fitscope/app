@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/normaltxt_lbl_style"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:textSize="20sp"
+    tools:text="22">
+
+
+    <ImageView
+        android:id="@+id/ivScheduleType"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:layout_marginEnd="-6dp"
+        android:layout_marginBottom="-8dp"
+        app:layout_constraintBottom_toTopOf="@id/dateLbl"
+        app:layout_constraintEnd_toEndOf="@id/dateLbl"
+        tools:src="@drawable/pending_ic" />
+
+    <TextView
+        android:id="@+id/dateLbl"
+        style="@style/normaltxt_lbl_style"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:background="@drawable/selected_date_bg"
+        tools:text="22" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/dateLbl"
+        style="@style/normaltxt_lbl_style"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:textSize="20sp"
+        tools:text="22" />
+    -->
+

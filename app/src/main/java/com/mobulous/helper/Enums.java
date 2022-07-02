@@ -1,0 +1,48 @@
+package com.mobulous.helper;
+
+public enum Enums {
+    isLogin,
+    ID,
+    CameraIntent,
+    GalleryIntent,
+    ProfileImage,
+    isProfileIsInUri,
+    Complete,
+    Schedule,
+    SelectedDate,
+    All,
+    video,
+    ScheduleType,
+    Upcoming,
+    History,
+    UserName,
+    UserEmail,
+    UserID,
+    UserToken,
+    BannerObjData,
+    FromSearchResults,
+    FromMySaveLstResults,
+    ChapterID,
+    FromFavResults,
+    FromOfflineDownloads,
+    FromOnTheFloorChapters,
+    FromSeniorWorkOutSingleViewResults,
+    FromRecumbentSingleViewResults,
+    HomeParentData,
+    RowingParentData,
+    BannerVp,
+    CATEGORY_DATA_ITEM,
+    NORMAL,
+    REMOVE_FROM_FAV,
+    REMOVE_FROM_SCHEDULE,
+    ReSCHEDULE,
+    CalenderDateClick,
+    ADD_TO_FAV,
+    REMOVE_FROM_SAVE,
+    ADD_TO_SAVE,
+    EnrollImageUrl,
+    Obj
+
+
+
+}

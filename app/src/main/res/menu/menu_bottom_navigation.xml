@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/classes"
+        android:icon="@drawable/btm_cls_icon"
+        android:title="Classes" />
+
+    <item
+        android:iconTint="@color/new_black"
+        android:id="@+id/program"
+        android:icon="@drawable/newpro"
+        android:title="Program" />
+
+
+    <item
+        android:id="@+id/search"
+        android:icon="@drawable/btm_srch_icon"
+        android:title="Search" />
+
+    <item
+        android:id="@+id/calendar"
+        android:icon="@drawable/btm_clndr_icon"
+        android:title="Calendar" />
+
+    <item
+        android:id="@+id/library"
+        android:icon="@drawable/btm_lbry_icon"
+        android:title="Library" />
+
+</menu>

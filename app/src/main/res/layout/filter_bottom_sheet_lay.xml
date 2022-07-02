@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/drawable_topcornor_white_bg"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottomsheet"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="60dp"
+            android:layout_height="6dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="12dp"
+            app:cardBackgroundColor="#A8A8A8"
+            app:cardCornerRadius="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/clrFiltrs"
+            style="@style/normaltxt_14spSemibold"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+
+            android:text="Clear"
+            android:textColor="@color/filterScrnColor"
+            app:layout_constraintBottom_toBottomOf="@+id/Filtrs"
+            app:layout_constraintEnd_toStartOf="@id/Filtrs"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/Filtrs" />
+
+        <TextView
+            android:id="@+id/applyFiltrs"
+            style="@style/normaltxt_14spSemibold"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="Apply"
+            android:textAlignment="textEnd"
+            android:textColor="@color/filterScrnColor"
+            app:layout_constraintBottom_toBottomOf="@+id/Filtrs"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/Filtrs"
+            app:layout_constraintTop_toTopOf="@+id/Filtrs" />
+
+
+        <TextView
+            android:id="@+id/Filtrs"
+            style="@style/normaltxt_17sp_semiBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="FILTERS"
+            app:layout_constraintEnd_toEndOf="@id/applyFiltrs"
+            app:layout_constraintStart_toStartOf="@id/clrFiltrs"
+            app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+        <TextView
+            android:id="@+id/lbl"
+            style="@style/normaltxt_17sp_semiBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12pt"
+            android:text="Length"
+            app:layout_constraintStart_toStartOf="@+id/clrFiltrs"
+            app:layout_constraintTop_toBottomOf="@+id/clrFiltrs" />
+
+        <TextView
+            android:id="@+id/lngthRgneLbl"
+            style="@style/normaltxt_14sp_segoeui_regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0-90 mins"
+            app:layout_constraintBottom_toBottomOf="@+id/lbl"
+            app:layout_constraintEnd_toEndOf="@+id/applyFiltrs"
+            app:layout_constraintTop_toTopOf="@+id/lbl" />
+
+        <com.google.android.material.slider.RangeSlider
+            android:id="@+id/range_slider"
+            style="@style/RangeSliderTheme"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="14dp"
+            android:contentDescription=""
+            android:stepSize="5.0"
+            android:valueFrom="0.0"
+            android:valueTo="90.0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lbl"
+            app:values="@array/slider" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv"
+            android:layout_width="0dp"
+            android:layout_height="400dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/range_slider"
+            tools:itemCount="10"
+            tools:listitem="@layout/filter_parent_rv_item_lay" />
+
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:indeterminate="true"
+            android:indeterminateDrawable="@drawable/progress_bar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--        <androidx.core.widget.NestedScrollView-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="0dp"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toBottomOf="@+id/range_slider">-->
+
+        <!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="match_parent">-->
+
+        <!--                -->
+
+
+        <!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+        <!--        </androidx.core.widget.NestedScrollView>-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <!--</androidx.constraintlayout.widget.ConstraintLayout>-->

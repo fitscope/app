@@ -1,0 +1,67 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/legendLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="horizontal"
+    tools:ignore="HardcodedText">
+
+    <TextView
+        android:id="@+id/legendText1"
+        style="@style/calendarHeaderStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="SUN" />
+
+    <TextView
+        android:id="@+id/legendText2"
+        style="@style/calendarHeaderStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="MON" />
+
+    <TextView
+        android:id="@+id/legendText3"
+        style="@style/calendarHeaderStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="TUE" />
+
+    <TextView
+        android:id="@+id/legendText4"
+        style="@style/calendarHeaderStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="WED" />
+
+    <TextView
+        android:id="@+id/legendText5"
+        style="@style/calendarHeaderStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="THU" />
+
+    <TextView
+        android:id="@+id/legendText6"
+        style="@style/calendarHeaderStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="FRI" />
+
+    <TextView
+        android:id="@+id/legendText7"
+        style="@style/calendarHeaderStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="SAT" />
+
+</LinearLayout>

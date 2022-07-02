@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/main_FoundDeviceItem_layout"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/ivMainImg_FoundDeviceItem"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="19dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/earpod_black_img" />
+
+    <TextView
+        android:id="@+id/tvTitle_FoundDeviceItem"
+        style="@style/normaltxt_16sp_Bold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:text="Zeeshan's Earpods"
+        app:layout_constraintBottom_toBottomOf="@+id/ivMainImg_FoundDeviceItem"
+        app:layout_constraintEnd_toStartOf="@+id/ivBlutooth_FoundDeviceItem"
+        app:layout_constraintStart_toEndOf="@+id/ivMainImg_FoundDeviceItem"
+        app:layout_constraintTop_toTopOf="@+id/ivMainImg_FoundDeviceItem" />
+
+    <ImageView
+        android:id="@+id/ivBlutooth_FoundDeviceItem"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="47dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivMainImg_FoundDeviceItem"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ivMainImg_FoundDeviceItem"
+        app:srcCompat="@drawable/bluetooth_finding_img" />
+
+    <TextView
+        android:id="@+id/tvPaired_FoundDeviceItem"
+        style="@style/normaltxt_14sp_segoeui_regular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Paired"
+        android:textColor="@color/blue"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/tvTitle_FoundDeviceItem"
+        app:layout_constraintStart_toStartOf="@+id/tvTitle_FoundDeviceItem"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle_FoundDeviceItem" />
+
+    <View
+        android:id="@+id/divider8"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="19dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/ivBlutooth_FoundDeviceItem"
+        app:layout_constraintStart_toStartOf="@+id/ivMainImg_FoundDeviceItem"
+        app:layout_constraintTop_toBottomOf="@+id/ivMainImg_FoundDeviceItem" />
+</androidx.constraintlayout.widget.ConstraintLayout>

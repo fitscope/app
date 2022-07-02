@@ -1,0 +1,124 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.mobulous.fragments.AuthFragment.SignupFragment">
+
+    <ImageView
+        android:id="@+id/ivBackSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_24"
+        android:layout_marginTop="@dimen/dp_30"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_path_23" />
+
+    <TextView
+        android:id="@+id/textView3"
+        style="@style/normaltxt_22sp_bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_35"
+        android:text="Let's get started"
+        android:textSize="@dimen/sp_22"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivBackSignUp" />
+
+    <TextView
+
+        android:id="@+id/textView4"
+        style="@style/normaltxt_16sp_segui_semi_bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_32"
+        android:layout_marginTop="@dimen/dp_16"
+        android:layout_marginEnd="@dimen/dp_32"
+        android:gravity="center_horizontal"
+        android:textSize="@dimen/sp_16"
+        android:text="We'll need a few things to get you signed up:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <EditText
+        android:id="@+id/edt_name_SignUp"
+        style="@style/Edittxt_16sp_Regular"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:layout_marginStart="@dimen/dp_38"
+        android:layout_marginTop="@dimen/dp_24"
+        android:layout_marginEnd="@dimen/dp_38"
+        android:hint="Name"
+        android:textSize="@dimen/sp_16"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <EditText
+        android:id="@+id/edt_email_SignUp"
+        style="@style/Edittxt_16sp_Regular"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_45"
+        android:layout_marginTop="@dimen/dp_16"
+        android:hint="Email"
+        android:textSize="@dimen/sp_16"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/edt_name_SignUp"
+        app:layout_constraintStart_toStartOf="@+id/edt_name_SignUp"
+        app:layout_constraintTop_toBottomOf="@+id/edt_name_SignUp" />
+
+    <EditText
+        android:id="@+id/edt_pass_SignUp"
+        style="@style/Edittxt_16sp_Regular"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_45"
+        android:inputType="textPassword"
+        android:layout_marginTop="@dimen/dp_16"
+        android:hint="Password"
+        android:textSize="@dimen/sp_16"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/edt_email_SignUp"
+        app:layout_constraintStart_toStartOf="@+id/edt_email_SignUp"
+        app:layout_constraintTop_toBottomOf="@+id/edt_email_SignUp" />
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_16"
+        app:layout_constraintStart_toStartOf="@+id/edt_pass_SignUp"
+        app:layout_constraintTop_toBottomOf="@+id/edt_pass_SignUp" />
+
+    <TextView
+        android:id="@+id/tv_showPassword_SignUp"
+        style="@style/normaltxt_14spSemibold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_16"
+        android:text="Show Password"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintBottom_toBottomOf="@+id/switch1"
+        app:layout_constraintStart_toEndOf="@+id/switch1"
+        app:layout_constraintTop_toTopOf="@+id/switch1" />
+
+    <Button
+        android:id="@+id/signup_btn_SignUp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        style="@style/normaltxt_16sp_segui_semi_bold"
+        android:layout_marginStart="@dimen/dp_38"
+        android:layout_marginTop="@dimen/dp_24"
+        android:layout_marginEnd="@dimen/dp_38"
+        android:background="@drawable/drawable_common_rectangle"
+        app:backgroundTint="@color/red"
+        android:text="GET STARTED"
+        android:textSize="@dimen/sp_16"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_showPassword_SignUp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

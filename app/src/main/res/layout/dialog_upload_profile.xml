@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp">
+
+    <TextView
+        android:id="@+id/cameraLbl"
+        style="@style/normaltxt_18spsemibold"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:text="Camera"
+        android:textColor="@color/new_black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/divider13"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cameraLbl" />
+
+    <TextView
+        android:id="@+id/galleryLbl"
+        style="@style/normaltxt_18spsemibold"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:text="Gallery"
+        android:textColor="@color/new_black"
+        app:layout_constraintEnd_toEndOf="@+id/divider13"
+        app:layout_constraintStart_toStartOf="@+id/divider13"
+        app:layout_constraintTop_toBottomOf="@+id/divider13" />
+
+    <View
+        android:id="@+id/divider14"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/galleryLbl" />
+
+    <TextView
+        android:id="@+id/tvCancel"
+        style="@style/normaltxt_18spsemibold"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:text="Cancel"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/new_black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/divider14"
+        app:layout_constraintStart_toStartOf="@+id/divider14"
+        app:layout_constraintTop_toBottomOf="@+id/divider14" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,49 @@
+package com.mobulous.Adapter.ClassesAdptrs
+
+import android.content.Context
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
+import com.google.gson.Gson
+import com.mobulous.fitscope.databinding.VerticalRvDataItemBinding
+import com.mobulous.helper.loadNormalPhoto_Dimens300
+import com.mobulous.listner.TreadmillViewAllListnr
+import com.mobulous.pojo.dashboard.classes.treadmil.ClassTreadDataItem
+
+class TreadMillAdptr(
+    val con: Context,
+    val lst: ArrayList<ClassTreadDataItem?>,
+    val listnr: TreadmillViewAllListnr
+) :
+    RecyclerView.Adapter<TreadMillAdptr.ViewHolder>() {
+    private val viewPool = RecyclerView.RecycledViewPool()
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        return ViewHolder(
+            VerticalRvDataItemBinding.inflate(
+                LayoutInflater.from(con),
+                parent,
+                false
+            )
+        )
+    }
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.mView.imge.loadNormalPhoto_Dimens300(lst[position]?.cateImage ?: "")
+        holder.mView.textView36.visibility =
+            if (holder.mView.textView36.text.isNotEmpty()) View.VISIBLE else View.INVISIBLE
+        holder.mView.lbl2.text = lst[position]?.category ?: ""
+        holder.itemView.setOnClickListener {
+            listnr.onTreadMillViewAllClick(
+                lbl = lst[position]?.category ?: "", data = Gson().toJson(lst[position]?.categoryData)
+            )
+        }
+    }
+
+    override fun getItemCount(): Int {
+        return lst.size
+    }
+
+    inner class ViewHolder(val mView: VerticalRvDataItemBinding) :
+        RecyclerView.ViewHolder(mView.root)
+}

@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.Schedule.ScheduleActivity">
+
+
+    <TextView
+        android:id="@+id/textView8"
+        style="@style/normaltxt_20sp_Bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="SCHEDULE"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivCross_Schedule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp_12"
+        app:layout_constraintBottom_toBottomOf="@+id/textView8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView8"
+        app:srcCompat="@drawable/cross_red" />
+
+    <TextView
+        android:id="@+id/tvSave_Schedule"
+        style="@style/normaltxt_14spSemibold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp_12"
+        android:text="@string/save"
+        android:textColor="@color/red"
+        app:layout_constraintBottom_toBottomOf="@+id/textView8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView8" />
+
+    <TextView
+        android:id="@+id/textView33"
+        style="@style/normaltxt_14spSemibold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:gravity="center_horizontal"
+        android:maxWidth="@dimen/dp_300"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8"
+        tools:text="When would you like to schedule \n60 Min Adv Rhythm Ride #261?" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView33">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--            <TextView-->
+            <!--                android:id="@+id/tvCalendarLbl_Schedule"-->
+            <!--                style="@style/normaltxt_20sp_Bold"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginTop="24dp"-->
+            <!--                android:text="January"-->
+            <!--                app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                app:layout_constraintStart_toStartOf="parent"-->
+            <!--                app:layout_constraintTop_toTopOf="parent" />-->
+
+            <!--            <ImageView-->
+            <!--                android:id="@+id/ivNextMonthImage_Schedule"-->
+            <!--                android:layout_width="30dp"-->
+            <!--                android:layout_height="30dp"-->
+            <!--                android:layout_marginEnd="24dp"-->
+            <!--                android:rotation="180"-->
+            <!--                app:layout_constraintBottom_toBottomOf="@+id/tvCalendarLbl_Schedule"-->
+            <!--                app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                app:layout_constraintTop_toTopOf="@+id/tvCalendarLbl_Schedule"-->
+            <!--                app:srcCompat="@drawable/ic_back_arrow_black" />-->
+
+            <!--            <com.kizitonwose.calendarview.CalendarView-->
+            <!--                android:id="@+id/exFiveCalendar_Schedule"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginStart="20dp"-->
+            <!--                android:layout_marginTop="24dp"-->
+            <!--                android:layout_marginEnd="24dp"-->
+            <!--                app:cv_dayViewResource="@layout/calendar_day_layout"-->
+            <!--                app:cv_monthHeaderResource="@layout/calender_header_lay"-->
+            <!--                app:cv_orientation="horizontal"-->
+            <!--                app:cv_outDateStyle="endOfGrid"-->
+            <!--                app:cv_scrollMode="paged"-->
+            <!--                app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                app:layout_constraintStart_toStartOf="parent"-->
+            <!--                app:layout_constraintTop_toBottomOf="@+id/tvCalendarLbl_Schedule" />-->
+
+
+            <include
+                android:id="@+id/custom_calender_lay"
+                layout="@layout/custom_calender_lay" />
+
+
+            <TextView
+                android:id="@+id/textView39"
+                style="@style/normaltxt_20sp_Bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Choose a time:"
+                app:layout_constraintEnd_toEndOf="@+id/custom_calender_lay"
+                app:layout_constraintStart_toStartOf="@+id/custom_calender_lay"
+                app:layout_constraintTop_toBottomOf="@+id/custom_calender_lay" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/DatePicker_Schedule"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="54dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="54dp"
+                android:layout_marginBottom="32dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView39">
+
+                <Spinner
+                    android:id="@+id/textView40"
+                    style="@style/normaltxt_18sp_Regular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/custom_sp_bg"
+                    android:entries="@array/hours_sp_arry"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/textView41"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Spinner
+                    android:id="@+id/textView41"
+                    style="@style/normaltxt_18sp_Regular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/custom_sp_bg"
+                    android:entries="@array/mintues_sp_arry"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView40"
+                    app:layout_constraintEnd_toStartOf="@+id/textView42"
+                    app:layout_constraintStart_toEndOf="@+id/textView40"
+                    app:layout_constraintTop_toTopOf="@+id/textView40" />
+
+                <Spinner
+                    android:id="@+id/textView42"
+                    style="@style/normaltxt_18sp_Regular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/custom_sp_bg"
+                    android:entries="@array/time_format_sp_arry"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.412"
+                    app:layout_constraintStart_toEndOf="@+id/textView41"
+                    app:layout_constraintTop_toTopOf="@+id/textView41" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

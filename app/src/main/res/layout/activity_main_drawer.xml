@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_drw_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvBluetooth_MainDrawer"
+        style="@style/normaltxt_20sp_Bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="16dp"
+        android:enabled="false"
+        android:text="Bluetooth Devices"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvFavorites_MainDrawer"
+        style="@style/normaltxt_20sp_Bold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Favorites"
+        app:layout_constraintEnd_toEndOf="@+id/tvBluetooth_MainDrawer"
+        app:layout_constraintStart_toStartOf="@+id/tvBluetooth_MainDrawer"
+        app:layout_constraintTop_toBottomOf="@+id/tvBluetooth_MainDrawer" />
+
+    <TextView
+        android:id="@+id/tvMyList_MainDrawer"
+        style="@style/normaltxt_20sp_Bold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="My List"
+        app:layout_constraintEnd_toEndOf="@+id/tvFavorites_MainDrawer"
+        app:layout_constraintStart_toStartOf="@+id/tvFavorites_MainDrawer"
+        app:layout_constraintTop_toBottomOf="@+id/tvFavorites_MainDrawer" />
+
+    <TextView
+        android:id="@+id/tvDownloads_MainDrawer"
+        style="@style/normaltxt_20sp_Bold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Downloads"
+        app:layout_constraintEnd_toEndOf="@+id/tvMyList_MainDrawer"
+        app:layout_constraintStart_toStartOf="@+id/tvMyList_MainDrawer"
+        app:layout_constraintTop_toBottomOf="@+id/tvMyList_MainDrawer" />
+
+    <TextView
+        android:id="@+id/tvProfile_MainDrawer"
+        style="@style/normaltxt_20sp_Bold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Profile"
+        app:layout_constraintEnd_toEndOf="@+id/tvDownloads_MainDrawer"
+        app:layout_constraintStart_toStartOf="@+id/tvDownloads_MainDrawer"
+        app:layout_constraintTop_toBottomOf="@+id/tvDownloads_MainDrawer" />
+
+    <TextView
+        android:id="@+id/tvManageSubsciption"
+        style="@style/normaltxt_20sp_Bold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Manage My Subscription"
+        app:layout_constraintEnd_toEndOf="@+id/tvProfile_MainDrawer"
+        app:layout_constraintStart_toStartOf="@+id/tvProfile_MainDrawer"
+        app:layout_constraintTop_toBottomOf="@+id/tvProfile_MainDrawer" />
+
+    <TextView
+        android:id="@+id/tvSupport_MainDrawer"
+        style="@style/normaltxt_20sp_Bold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Support"
+        app:layout_constraintEnd_toEndOf="@+id/tvManageSubsciption"
+        app:layout_constraintStart_toStartOf="@+id/tvManageSubsciption"
+        app:layout_constraintTop_toBottomOf="@+id/tvManageSubsciption" />
+
+    <TextView
+        android:id="@+id/tvFAQs_MainDrawer"
+        style="@style/normaltxt_20sp_Bold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="FAQs"
+        app:layout_constraintEnd_toEndOf="@+id/tvSupport_MainDrawer"
+        app:layout_constraintStart_toStartOf="@+id/tvSupport_MainDrawer"
+        app:layout_constraintTop_toBottomOf="@+id/tvSupport_MainDrawer" />
+
+    <TextView
+        android:id="@+id/tvVersion_MAinDrawer"
+        style="@style/normaltxt_14sp_bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Version 1.0.0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvAlreadySign_MAinDrawer"
+        style="@style/normaltxt_14sp_bold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center_horizontal"
+        android:text="@string/already_have_an_account_sign_in_here"
+        app:layout_constraintBottom_toTopOf="@+id/tvVersion_MAinDrawer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv7Trail_MainDrawer"
+        style="@style/normaltxt_14sp_bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/drawable_common_rectangle"
+        android:paddingLeft="20dp"
+        android:paddingTop="13dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="13dp"
+        android:text="Start 7 day free trial"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/tvAlreadySign_MAinDrawer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <View
+        android:id="@+id/red_bar"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:background="@color/red"
+        app:layout_constraintBottom_toBottomOf="@id/homeTb"
+        app:layout_constraintEnd_toEndOf="@id/homeTb"
+        app:layout_constraintStart_toStartOf="@id/homeTb" />
+
+    <TextView
+        android:id="@+id/homeTb"
+        style="@style/TabLayouy_Style"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/tab_item_dimen"
+        android:text="HOME"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/bikeTb"
+        style="@style/TabLayouy_Style"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/tab_item_dimen"
+        android:text="  BIKES"
+        app:layout_constraintStart_toEndOf="@id/homeTb"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/ellipitcalsTb"
+        style="@style/TabLayouy_Style"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/tab_item_dimen"
+        android:text="  ELLIPTICALS"
+        app:layout_constraintStart_toEndOf="@id/bikeTb"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/rowerTb"
+        style="@style/TabLayouy_Style"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/tab_item_dimen"
+        android:text="  ROWER"
+        app:layout_constraintStart_toEndOf="@id/ellipitcalsTb"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/treadmilTb"
+        style="@style/TabLayouy_Style"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/tab_item_dimen"
+        android:text="  TREADMILL"
+        app:layout_constraintStart_toEndOf="@id/rowerTb"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/onTheFloorTb"
+        style="@style/TabLayouy_Style"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/tab_item_dimen"
+        android:text="  ON THE FLOOR"
+        app:layout_constraintStart_toEndOf="@id/treadmilTb"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

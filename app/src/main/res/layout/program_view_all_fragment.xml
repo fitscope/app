@@ -1,0 +1,68 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.mobulous.fragments.CategoryComentFrgs.HomeCategoryCommentFrg">
+
+    <include
+        android:id="@+id/ViewAllToolbar"
+        layout="@layout/common_toolbar"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/viewAllTopBnnr"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_200"
+        android:scaleType="fitXY"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ViewAllToolbar"
+        tools:background="@drawable/big_cycling" />
+
+    <TextView
+        android:id="@+id/lbl"
+        style="@style/normaltxt_32sp_bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Latest"
+        android:textAllCaps="true"
+        android:visibility="gone"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/viewAllTopBnnr"
+        app:layout_constraintTop_toTopOf="@id/viewAllTopBnnr" />
+
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/viewall_tab_lay"
+        style="@style/TabLayouy_Style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/viewAllTopBnnr"
+        app:tabTextAppearance="@style/MyTabLayoutTextAppearance" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewAllViewpagr"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/viewall_tab_lay" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

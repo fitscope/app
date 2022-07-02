@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/FitScope/app/src/main/res/layout/activity_about_video.xml" value="0.29322916666666665" />
+        <entry key="..\:/FitScope/app/src/main/res/layout/calendar_day_layout.xml" value="0.29322916666666665" />
+        <entry key="..\:/FitScope/app/src/main/res/layout/calender_header_lay.xml" value="0.29322916666666665" />
+        <entry key="..\:/FitScope/app/src/main/res/layout/custom_calender_lay.xml" value="0.29322916666666665" />
+        <entry key="..\:/FitScope/app/src/main/res/layout/custom_video_player.xml" value="0.219921875" />
+        <entry key="..\:/FitScope/app/src/main/res/layout/fragment_calendar_frg.xml" value="0.29322916666666665" />
+      </map>
+    </option>
+  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK" />
+</project>

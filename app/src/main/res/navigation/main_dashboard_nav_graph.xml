@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_dashboard_nav_graph"
+    app:startDestination="@id/classes">
+
+    <fragment
+        android:id="@+id/classes"
+        android:name="com.mobulous.fragments.dashboardBottomNavFrgs.ClassesFrgs"
+        android:label="fragment_classes_frgs"
+        tools:layout="@layout/fragment_classes_frgs">
+        <action
+            android:id="@+id/classesFrgAction"
+            app:destination="@id/program" />
+        <action
+            android:id="@+id/actionToViewAll"
+            app:destination="@id/categoriesFrg" />
+
+        <action
+            android:id="@+id/actionToCategoryComment"
+            app:destination="@id/bikesCategoryCommentFrg" />
+
+
+        <action
+            android:id="@+id/actionToFeaturedViewAllFrg"
+            app:destination="@id/featuredViewAllFrg" />
+        <action
+            android:id="@+id/actionToBikeViewAll"
+            app:destination="@id/bikeViewAllFrg" />
+
+        <action
+            android:id="@+id/actionToEllipticalsViewAll"
+            app:destination="@id/ellipticalsViewAllFrg" />
+
+        <action
+            android:id="@+id/actionToTreadmillViewAll"
+            app:destination="@id/treadMilViewAllFrg" />
+
+        <action
+            android:id="@+id/actionToOnTheFloorViewAll"
+            app:destination="@id/onTheFloorViewAllFrg" />
+
+        <action
+            android:id="@+id/action_classes_to_library"
+            app:destination="@id/library" />
+        <action
+            android:id="@+id/action_classes_to_subscriptionFragment2"
+            app:destination="@id/subscriptionFragment2" />
+        <action
+            android:id="@+id/action_classes_to_signupFragment2"
+            app:destination="@id/signupFragment2" />
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/program"
+        android:name="com.mobulous.fragments.dashboardBottomNavFrgs.ProgramsFrg"
+        android:label="fragment_programs_frg"
+        tools:layout="@layout/fragment_programs_frg">
+        <action
+            android:id="@+id/programsFrgAction"
+            app:destination="@id/search" />
+        <action
+            android:id="@+id/actionToViewAll"
+            app:destination="@id/recumentCategoriesCommentFrg" />
+
+        <action
+            android:id="@+id/actionRecumbentToViewAll"
+            app:destination="@id/recumbentViewAllFrg" />
+
+        <action
+            android:id="@+id/actionToRecumbentCategoriesCommentFrg"
+            app:destination="@id/recumentCategoriesCommentFrg" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/search"
+        android:name="com.mobulous.fragments.dashboardBottomNavFrgs.SearchFrg"
+        android:label="fragment_search_frg"
+        tools:layout="@layout/fragment_search_frg">
+        <action
+            android:id="@+id/searchFrgAction"
+            app:destination="@id/calendar" />
+
+        <action
+            android:id="@+id/acionToSearchVerticalFrg"
+            app:destination="@id/searchVerticalFrg" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/calendar"
+        android:name="com.mobulous.fragments.dashboardBottomNavFrgs.CalendarFrg"
+        android:label="fragment_calendar_frg"
+        tools:layout="@layout/fragment_calendar_frg">
+        <action
+            android:id="@+id/calendarFrgAction"
+            app:destination="@id/library" />
+    </fragment>
+    <fragment
+        android:id="@+id/library"
+        android:name="com.mobulous.fragments.dashboardBottomNavFrgs.MyLibraryFrg"
+        android:label="fragment_my_library_frg"
+        tools:layout="@layout/fragment_my_library_frg">
+        <argument
+            android:name="postion"
+            android:defaultValue="0"
+            app:argType="string"
+            app:nullable="true" />
+        <action
+            android:id="@+id/singleViewChapterAction"
+            app:destination="@id/singleViewChapterFrg" />
+
+    </fragment>
+    <!--    <fragment-->
+    <!--        android:id="@+id/HomeCategoryCommentFrg"-->
+    <!--        android:name="com.mobulous.fragments.CategoryComentFrgs.HomeCategoryCommentFrg"-->
+    <!--        android:label="fragment_view_all_frg"-->
+    <!--        tools:layout="@layout/fragment_view_all_frg">-->
+    <!--        <argument-->
+    <!--            android:name="titles"-->
+    <!--            app:argType="string" />-->
+
+    <!--        <action-->
+    <!--            android:id="@+id/action_viewAll_to_classes"-->
+    <!--            app:destination="@id/classes" />-->
+    <!--    </fragment>-->
+    <fragment
+        android:id="@+id/signupFragment2"
+        android:name="com.mobulous.fragments.AuthFragment.SignupFragment"
+        android:label="fragment_signup"
+        tools:layout="@layout/fragment_signup" />
+    <fragment
+        android:id="@+id/subscriptionFragment2"
+        android:name="com.mobulous.fragments.AuthFragment.SubscriptionFragment"
+        android:label="fragment_subscription"
+        tools:layout="@layout/fragment_subscription" />
+
+    <fragment
+        android:id="@+id/bikeViewAllFrg"
+        android:name="com.mobulous.fragments.viewAllFrgs.BikeViewAllFrg"
+        android:label="fragment_bike_view_all_frg"
+        tools:layout="@layout/fragment_bike_view_all_frg">
+
+        <argument
+            android:name="category_name"
+            app:argType="string" />
+        <argument
+            android:name="dataToPopulate"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_viewAll_to_classes"
+            app:destination="@id/classes" />
+
+        <action
+            android:id="@+id/actionToViewAll"
+            app:destination="@id/bikesCategoryCommentFrg" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/bikesCategoryCommentFrg"
+        android:name="com.mobulous.fragments.CategoryComentFrgs.BikesCategoryCommentFrg"
+        android:label="BikesCategoryCommentFrg">
+        <argument
+            android:name="object_string"
+            app:argType="string" />
+
+        <argument
+            android:name="categoryLbl"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_viewAll_to_classes"
+            app:destination="@id/classes" />
+    </fragment>
+    <fragment
+        android:id="@+id/ellipticalsViewAllFrg"
+        android:name="com.mobulous.fragments.viewAllFrgs.EllipticalsViewAllFrg"
+        android:label="EllipticalsViewAllFrg">
+
+        <argument
+            android:name="dataToPopulate"
+            app:argType="string" />
+        <argument
+            android:name="category_name"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_viewAll_to_classes"
+            app:destination="@id/classes" />
+
+        <action
+            android:id="@+id/actionToViewAll"
+            app:destination="@id/bikesCategoryCommentFrg" />
+    </fragment>
+    <fragment
+        android:id="@+id/treadMilViewAllFrg"
+        android:name="com.mobulous.fragments.viewAllFrgs.TreadMilViewAllFrg"
+        android:label="TreadMilViewAllFrg">
+        <argument
+            android:name="dataToPopulate"
+            app:argType="string" />
+        <argument
+            android:name="category_name"
+            app:argType="string" />
+
+        <action
+            android:id="@+id/action_viewAll_to_classes"
+            app:destination="@id/classes" />
+
+        <action
+            android:id="@+id/actionToViewAll"
+            app:destination="@id/bikesCategoryCommentFrg" />
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/onTheFloorViewAllFrg"
+        android:name="com.mobulous.fragments.viewAllFrgs.OnTheFloorViewAllFrg"
+        android:label="OnTheFloorViewAllFrg">
+        <argument
+            android:name="dataToPopulate"
+            app:argType="string" />
+        <argument
+            android:name="category_name"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_viewAll_to_classes"
+            app:destination="@id/classes" />
+
+        <action
+            android:id="@+id/actionToViewAll"
+            app:destination="@id/bikesCategoryCommentFrg" />
+    </fragment>
+    <fragment
+        android:id="@+id/featuredCategoryCommentFrg"
+        android:name="com.mobulous.fragments.CategoryComentFrgs.FeaturedCategoryCommentFrg"
+        android:label="FeaturedCategoryCommentFrg" />
+
+    <!--    <fragment-->
+    <!--        android:id="@+id/programCategoryCommentFrg"-->
+    <!--        android:name="com.mobulous.fragments.CategoryComentFrgs.ProgramCategoryCommentFrg"-->
+    <!--        android:label="ProgramCategoryCommentFrg">-->
+
+    <!--        <argument-->
+    <!--            android:name="titles"-->
+    <!--            app:argType="string" />-->
+
+    <!--        <action-->
+    <!--            android:id="@+id/actionToBackToProgramSection"-->
+    <!--            app:destination="@id/program" />-->
+    <!--    </fragment>-->
+
+    <fragment
+        android:id="@+id/featuredViewAllFrg"
+        android:name="com.mobulous.fragments.viewAllFrgs.FeaturedViewAllFrg"
+        android:label="FeaturedViewAllFrg">
+        <argument
+            android:name="category_name"
+            app:argType="string" />
+
+
+        <action
+            android:id="@+id/actionToBackToClassesSection"
+            app:destination="@id/classes" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/recumbentViewAllFrg"
+        android:name="com.mobulous.fragments.viewAllFrgs.programs.seniorWorkout.RecumbentViewAllFrg"
+        android:label="RecumbentViewAllFrg">
+
+        <argument
+            android:name="category_lbl"
+            app:argType="string" />
+
+        <argument
+            android:name="object_string"
+            app:argType="string" />
+
+        <action
+            android:id="@+id/action_viewAll_to_program"
+            app:destination="@id/program" />
+
+        <action
+            android:id="@+id/actionRecumbentToSingleView"
+            app:destination="@id/recumbentSingleViewFrg" />
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/recumbentSingleViewFrg"
+        android:name="com.mobulous.fragments.viewAllFrgs.programs.seniorWorkout.RecumbentSingleViewFrg"
+        android:label="RecumbentSingleViewFrg">
+
+        <argument
+            android:name="category_lbl"
+            app:argType="string" />
+
+        <argument
+            android:name="object_string"
+            app:argType="string" />
+
+        <action
+            android:id="@+id/actionToRecumbentHorizontalView"
+            app:destination="@id/recumbentViewAllFrg" />
+    </fragment>
+    <fragment
+        android:id="@+id/recumentCategoriesCommentFrg"
+        android:name="com.mobulous.fragments.CategoryComentFrgs.RecumentCategoriesCommentFrg"
+        android:label="RecumentCategoriesCommentFrg">
+
+        <argument
+            android:name="category_name"
+            app:argType="string" />
+        <argument
+            android:name="dataToPopulate"
+            app:argType="string" />
+
+        <action
+            android:id="@+id/actionToProgram"
+            app:destination="@id/program" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/searchVerticalFrg"
+        android:name="com.mobulous.fragments.dashboardBottomNavFrgs.searchFrgs.SearchVerticalFrg"
+        android:label="fragment_search_vertical_frg"
+        tools:layout="@layout/fragment_search_vertical_frg">
+        <argument
+            android:name="programID"
+            app:argType="string" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/categoriesFrg"
+        android:name="com.mobulous.fragments.viewAllFrgs.CategoriesFrg"
+        android:label="fragment_categories_frg"
+        tools:layout="@layout/fragment_categories_frg">
+        <argument
+            android:name="dataToPopulate"
+            app:argType="string" />
+        <argument
+            android:name="parent_name"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_viewAll_to_classes"
+            app:destination="@id/classes" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/weightLossFrg"
+        android:name="com.mobulous.fragments.programFrgs.WeightLossFrg"
+        android:label="fragment_weight_loss_frg"
+        tools:layout="@layout/fragment_weight_loss_frg">
+        <argument
+            android:name="dataToPopulate"
+            app:argType="string" />
+
+        <argument
+            android:name="categoryName"
+            app:argType="string" />
+
+        <action
+            android:id="@+id/actionToBackToProgramSection"
+            app:destination="@id/program" />
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/singleViewChapterFrg"
+        android:name="com.mobulous.fragments.myLibraryFrgs.SingleViewChapterFrg"
+        android:label="fragment_single_view_chapter_frg"
+        tools:layout="@layout/fragment_single_view_chapter_frg">
+
+        <argument
+            android:name="programID"
+            app:argType="string" />
+        <argument
+            android:name="type"
+            app:argType="boolean" />
+    </fragment>
+
+
+    <!--    <fragment-->
+    <!--        android:id="@+id/seniorWorkoutFrg"-->
+    <!--        android:name="com.mobulous.fragments.programFrgs.SeniorWorkoutFrg"-->
+    <!--        android:label="fragment_senior_workout_frg"-->
+    <!--        tools:layout="@layout/fragment_senior_workout_frg" >-->
+
+    <!--     -->
+
+    <!--    </fragment>-->
+
+</navigation>

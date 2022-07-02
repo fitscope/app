@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/childFilter_lbl"
+    style="@style/normaltxt_14sp_segoeui_regular"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    android:background="@drawable/bordered_bg"
+    android:gravity="center"
+    android:paddingStart="16pt"
+    android:paddingEnd="16pt"
+    android:padding="8dp"
+    android:text="Salmannsa Rodgers" />
+
+

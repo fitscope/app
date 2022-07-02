@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "444598330457",
+    "project_id": "fitscope-app-418cd",
+    "storage_bucket": "fitscope-app-418cd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:444598330457:android:5f432a5d99bcb65fb93d48",
+        "android_client_info": {
+          "package_name": "com.fitscopestudio.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "444598330457-m26436r29ppln8db7le3v4ut88ilcng5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxPUbUxTPxUkaCh7qnFRsW7OQgISYZ5GQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "444598330457-m26436r29ppln8db7le3v4ut88ilcng5.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "444598330457-avt0o1vcej6udihk1q0shgeqv719a7l6.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.fitscopeMain.app"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
