@@ -38,11 +38,7 @@ class HomeParent_ClassAdptr(
         // childLayoutManager.initialPrefetchItemCount = 4
         holder.mView.innerHorizonRv.apply {
             layoutManager = childLayoutManager
-            adapter =
-                HomeChild_ClassAdptr(
-                    holder.mView.innerHorizonRv.context,
-                    lst[position]?.chapters ?: arrayListOf()
-                )
+            adapter = HomeChild_ClassAdptr(holder.mView.innerHorizonRv.context, lst[position]?.chapters ?: arrayListOf())
             setRecycledViewPool(viewPool)
         }
         holder.mView.lbl1.text = lst[position]?.id

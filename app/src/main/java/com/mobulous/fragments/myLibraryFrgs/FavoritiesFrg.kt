@@ -5,8 +5,11 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -28,6 +31,7 @@ import com.mobulous.webservices.ServiceBuilder
 import kotlinx.coroutines.launch
 
 class FavoritiesFrg : Fragment(), FavoriteMoreOptionLisntr {
+    private  val TAG = "FavoritiesFrg"
     lateinit var mInterface: ApiInterface
     private var userID = ""
     lateinit var favAdptr: FavoriteAdapter
@@ -67,6 +71,13 @@ class FavoritiesFrg : Fragment(), FavoriteMoreOptionLisntr {
                                     favChaptLst.addAll(dataObj.data?.favChapters ?: arrayListOf())
                                     favProgramLst.addAll(dataObj.data?.favPrograms ?: arrayListOf())
                                     favAdptr.notifyDataSetChanged()
+
+                                    if(favChaptLst.size>0 || favProgramLst.size>0){
+                                        hideshowNoDataLay(makeHide = true)
+                                    }else{
+                                        hideshowNoDataLay(makeHide = false)
+                                    }
+
 //                                FavoriteAdapter(
 //                                    requireContext(),
 //                                    favChaptLst = dataObj.data?.favChapters ?: arrayListOf(),
@@ -110,6 +121,13 @@ class FavoritiesFrg : Fragment(), FavoriteMoreOptionLisntr {
                                         favChaptLst.size + favProgramLst.size,
                                         removedPosition
                                     )
+
+                                    if(favProgramLst.size>0){
+                                        hideshowNoDataLay(makeHide = true)
+                                    }else{
+                                        hideshowNoDataLay(makeHide = false)
+                                    }
+
                                 } else {
                                     requireActivity().showToast(dataObj.message ?: "")
                                 }
@@ -143,6 +161,14 @@ class FavoritiesFrg : Fragment(), FavoriteMoreOptionLisntr {
                                         favChaptLst.size + favProgramLst.size,
                                         removedPosition - favProgramLst.size
                                     )
+
+                                    if(favChaptLst.size>0){
+                                        hideshowNoDataLay(makeHide = true)
+                                    }else{
+                                        hideshowNoDataLay(makeHide = false)
+                                    }
+
+
                                 } else {
                                     requireActivity().showToast(dataObj.message ?: "")
                                 }
@@ -169,6 +195,13 @@ class FavoritiesFrg : Fragment(), FavoriteMoreOptionLisntr {
                                     println("--------------------------------------")
                                     favChaptLst[removedPosition]?.isSave = false
                                     println("---------------${favChaptLst[removedPosition]?.isSave}-")
+
+                                    if(favChaptLst.size>0){
+                                        hideshowNoDataLay(makeHide = true)
+                                    }else{
+                                        hideshowNoDataLay(makeHide = false)
+                                    }
+
 //                                favChaptLst.removeAt(removedPosition - favProgramLst.size)
 //                                favAdptr.notifyItemRemoved(removedPosition - favProgramLst.size)
 //                                favAdptr.notifyItemRangeRemoved(
@@ -199,6 +232,13 @@ class FavoritiesFrg : Fragment(), FavoriteMoreOptionLisntr {
                             it.data?.let { dataobj ->
                                 if (dataobj.status == 200) {
                                     favProgramLst[removedPosition]?.isSave = false
+
+                                    if(favProgramLst.size>0){
+                                        hideshowNoDataLay(makeHide = true)
+                                    }else{
+                                        hideshowNoDataLay(makeHide = false)
+                                    }
+
 //                                favProgramLst.removeAt(removedPosition)
 //                                favAdptr.notifyItemRemoved(removedPosition)
 //                                favAdptr.notifyItemRangeRemoved(
@@ -278,18 +318,10 @@ class FavoritiesFrg : Fragment(), FavoriteMoreOptionLisntr {
 
     fun initView() {
         userID = PrefUtils.with(requireContext()).getString(Enums.UserID.toString(), "") ?: ""
-        viewmodel = ViewModelProvider(
-            this,
-            LibraryVMFactory(
-                LibraryRepo(
-                    ServiceBuilder.mobulousBuildServiceToken(
+        viewmodel = ViewModelProvider(this, LibraryVMFactory(LibraryRepo(ServiceBuilder.mobulousBuildServiceToken(
                         ApiInterface::class.java,
-                        requireContext()
-                    )
-                )
-            )
-        ).get(LibraryViewModel::class.java)
-        bin.noPlaylistLayout.root.visibility = View.GONE
+                        requireContext())))).get(LibraryViewModel::class.java)
+      //  bin.noPlaylistLayout.root.visibility = View.GONE
         favAdptr = FavoriteAdapter(
             requireContext(),
             favChaptLst,
@@ -451,9 +483,21 @@ class FavoritiesFrg : Fragment(), FavoriteMoreOptionLisntr {
             IntentFilter(Constants.explicitBroadCastAction)
         )
         Uitls.showProgree(true, requireContext())
-        viewmodel.getFavLst(
-            userID
-        )
+        viewmodel.getFavLst(userID)
+    }
+    private fun hideshowNoDataLay(makeHide: Boolean) {
+        if (makeHide){
+            bin.clFavourites.visibility = GONE
+            bin.rv.visibility = VISIBLE
+        }else{
+            bin.clFavourites.visibility = VISIBLE
+            bin.rv.visibility = GONE
+        }
+
+      /*  bin.noPlaylistIcfav.visibility = if (makeHide) View.GONE else View.VISIBLE
+        bin.noPlaylistLbl1fav.visibility = if (makeHide) View.GONE else View.VISIBLE
+        bin.noPlaylistLbl2fav.visibility = if (makeHide) View.GONE else View.VISIBLE
+        bin.rv.visibility = if (makeHide) View.VISIBLE else View.GONE*/
     }
 
     override fun onPause() {
@@ -474,6 +518,5 @@ class FavoritiesFrg : Fragment(), FavoriteMoreOptionLisntr {
         removedPosition = position
         requireContext().showMoreOption(isSave, isFav = true)
     }
-
 
 }

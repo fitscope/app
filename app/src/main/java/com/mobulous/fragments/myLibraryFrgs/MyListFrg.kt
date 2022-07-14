@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -28,6 +29,7 @@ import com.mobulous.webservices.ServiceBuilder
 import kotlinx.coroutines.launch
 
 class MyListFrg : Fragment(), SaveMoreOptionLisntr {
+    private  val TAG = "MyListFrg"
     lateinit var bin: FragmentMyListFrgBinding
     lateinit var saveAdptr: MySaveLstAdapter
     lateinit var listnr: LibraryProgramListnr
@@ -190,7 +192,12 @@ class MyListFrg : Fragment(), SaveMoreOptionLisntr {
                                         dataObj.data?.savePrograms ?: arrayListOf()
                                     )
                                     saveAdptr.notifyDataSetChanged()
-                                    hideshowNoDataLay(makeHide = true)
+
+                                    if(saveChaptLst.size>0 || saveProgramLst.size>0){
+                                        hideshowNoDataLay(makeHide = true)
+                                    }else{
+                                        hideshowNoDataLay(makeHide = false)
+                                    }
 
                                 } else {
                                     requireActivity().showToast(dataObj.message ?: "")
@@ -223,6 +230,13 @@ class MyListFrg : Fragment(), SaveMoreOptionLisntr {
 //                                        saveChaptLst.size + saveProgramLst.size,
 //                                        removedPosition
 //                                    )
+
+                                    if(saveProgramLst.size>0){
+                                        hideshowNoDataLay(makeHide = true)
+                                    }else{
+                                        hideshowNoDataLay(makeHide = false)
+                                    }
+
                                 } else {
                                     requireActivity().showToast(dataObj.message ?: "")
                                 }
@@ -254,6 +268,12 @@ class MyListFrg : Fragment(), SaveMoreOptionLisntr {
 //                                        saveChaptLst.size + saveProgramLst.size,
 //                                        removedPosition - saveProgramLst.size
 //                                    )
+                                    if(saveChaptLst.size>0){
+                                        hideshowNoDataLay(makeHide = true)
+                                    }else{
+                                        hideshowNoDataLay(makeHide = false)
+                                    }
+
                                 } else {
                                     requireActivity().showToast(dataObj.message ?: "")
                                 }
@@ -287,6 +307,13 @@ class MyListFrg : Fragment(), SaveMoreOptionLisntr {
                                         removedPosition - saveProgramLst.size
                                     )
 
+                                    if(saveChaptLst.size>0){
+                                        hideshowNoDataLay(makeHide = true)
+                                    }else{
+                                        hideshowNoDataLay(makeHide = false)
+                                    }
+
+
                                 }
                                 requireActivity().showToast(dataobj.message ?: "")
                             }
@@ -316,6 +343,15 @@ class MyListFrg : Fragment(), SaveMoreOptionLisntr {
                                         saveChaptLst.size + saveProgramLst.size,
                                         removedPosition
                                     )
+
+                                    if(saveProgramLst.size>0){
+                                        hideshowNoDataLay(makeHide = true)
+                                    }else{
+                                        hideshowNoDataLay(makeHide = false)
+                                    }
+
+
+                                    Log.d(TAG, "observer: +${saveProgramLst.size}")
                                 }
                                 requireActivity().showToast(dataobj.message ?: "")
                             }
@@ -415,13 +451,11 @@ class MyListFrg : Fragment(), SaveMoreOptionLisntr {
 
     }
 
-
     private fun hideshowNoDataLay(makeHide: Boolean) {
         bin.imageView11.visibility = if (makeHide) View.GONE else View.VISIBLE
         bin.textView43.visibility = if (makeHide) View.GONE else View.VISIBLE
         bin.textView15.visibility = if (makeHide) View.GONE else View.VISIBLE
         bin.rv.visibility = if (makeHide) View.VISIBLE else View.GONE
-
 
     }
 

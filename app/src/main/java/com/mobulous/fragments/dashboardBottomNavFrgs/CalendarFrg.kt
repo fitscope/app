@@ -253,6 +253,7 @@ class CalendarFrg : Fragment(), DateListnr, RemoveScheduleLisntr {
                             dataObj.data?.let { scheduleLst ->
                                 scheduled_calender_lst.clear()
                                 scheduled_calender_lst.addAll(scheduleLst)
+
                                 with(customCalenderViewController) {
                                     scheduleDatesBindings(scheduled_calender_lst)
                                 }
@@ -329,9 +330,6 @@ class CalendarFrg : Fragment(), DateListnr, RemoveScheduleLisntr {
         bin.calModeChanger.setOnCheckedChangeListener { _, monthToWeek ->
             changeCalenderView(monthToWeek)
         }
-
-
-
         bin.calendarCusAppbar.calSideMenuBtn.visibility = View.VISIBLE
 
         bin.calendarCusAppbar.calSideMenuBtn.setOnClickListener {
@@ -497,7 +495,6 @@ class CalendarFrg : Fragment(), DateListnr, RemoveScheduleLisntr {
             Uitls.showProgree(true, requireContext())
             viewmodel.removeFromSchedule(scheduleID!!)
         }
-
 
     }
 

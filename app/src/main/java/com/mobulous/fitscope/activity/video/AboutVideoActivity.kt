@@ -7,14 +7,13 @@ import android.content.pm.ActivityInfo
 import android.content.res.Configuration
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
+import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import android.view.Window
 import android.widget.TextView
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
-import androidx.core.view.updateLayoutParams
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.ViewModelProvider
@@ -46,6 +45,7 @@ import com.mobulous.pojo.CommonChapterIDPojo
 import com.mobulous.pojo.PreviouslySchedulePojo
 import com.mobulous.pojo.saveChapter.*
 import com.mobulous.pojo.video.VideoDataObj
+import com.mobulous.pojo.video.VideoDetailVersions
 import com.mobulous.room.AppDatabase
 import com.mobulous.room.UserDownloads
 import com.mobulous.viewModels.videodetail.VideoDetailViewModel
@@ -54,9 +54,10 @@ import com.mobulous.webservices.ServiceBuilder
 import java.text.SimpleDateFormat
 import java.util.*
 
-
 class AboutVideoActivity : BaseAc<ActivityAboutVideoBinding>(), TabLayout.OnTabSelectedListener,
     commentItemCountLisntr {
+
+    private val TAG = "AboutVideoActivity"
     lateinit var viewmodel: VideoDetailViewModel
     var fragment: Fragment? = null
     private var mduration = ""
@@ -82,14 +83,14 @@ class AboutVideoActivity : BaseAc<ActivityAboutVideoBinding>(), TabLayout.OnTabS
     lateinit var mCastSession: CastSession
     lateinit var mCastContext: CastContext
     lateinit var mSessionManagerListener: SessionManagerListener<CastSession>
+    private var mResolutionType:String?="hd"
+    private var mVideoDisplay:String? =""
     private var scheduleResultContract =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { it ->
             if (it.resultCode == Activity.RESULT_OK) {
                 if (it.data?.getBooleanExtra(
                         Constants.isPreviouslyComplete,
-                        false
-                    ) == true
-                ) {
+                        false) == true) {
                     UpdateIconState(isChecked = true, position = 3)
                 }
             }
@@ -189,8 +190,7 @@ class AboutVideoActivity : BaseAc<ActivityAboutVideoBinding>(), TabLayout.OnTabS
                 authorizationToken = token,
                 date = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(Date()),
                 time = SimpleDateFormat("hh:mm a", Locale.getDefault()).format(Date()),
-                timeInMint = mduration, type = Constants.Complete
-            )
+                timeInMint = mduration, type = Constants.Complete)
 //            runOnUiThread {
 //                markChapterAsComplete(true)
 //            }
@@ -198,10 +198,7 @@ class AboutVideoActivity : BaseAc<ActivityAboutVideoBinding>(), TabLayout.OnTabS
         dialog.findViewById<TextView>(R.id.yes_previously).setOnClickListener {
             dialog.dismiss()
             scheduleResultContract.launch(
-                Intent(this, ScheduleActivity::class.java).putExtra(
-                    Constants.Case,
-                    Constants.Complete
-                ).putExtra(
+                Intent(this, ScheduleActivity::class.java).putExtra(Constants.Case, Constants.Complete).putExtra(
                     Constants.Data,
                     Gson().toJson(
                         PreviouslySchedulePojo(
@@ -442,11 +439,15 @@ class AboutVideoActivity : BaseAc<ActivityAboutVideoBinding>(), TabLayout.OnTabS
             listnr()
             observers()
         }
-
     }
 
     override fun onResume() {
         super.onResume()
+
+        val editor = getSharedPreferences(Constants.PREF_NAME, MODE_PRIVATE)
+        mResolutionType = editor?.getString(Constants.RESOLUTIONTYPE,"")
+
+        Log.d(TAG, "onResume: "+mResolutionType)
 //        mCastContext.sessionManager.addSessionManagerListener(
 //            mSessionManagerListener, CastSession::class.java
 //        )
@@ -752,15 +753,16 @@ class AboutVideoActivity : BaseAc<ActivityAboutVideoBinding>(), TabLayout.OnTabS
 
                             dataObj.videoDetails?.versions?.let {
                                 mduration = dataObj.videoDetails.durationInSeconds.toString()
-                                VideoViewController(
-                                    this@AboutVideoActivity,
-                                    binding
-                                ).mVideoSetup(
+                              //  setQuality(it)
+
+                                VideoViewController(this@AboutVideoActivity, binding).mVideoSetup(
+                                   /* videoUri = mVideoDisplay ?: ""*/
                                     videoUri = it.hd ?: "",
                                     mduration = dataObj.videoDetails?.durationInSeconds.toString(),
                                     versions = it,
                                     chapterTitle = binding.tvTitleAboutVideo.text.toString()
                                 )
+//                                mVideoUrl = mVideoDisplay ?: ""
                                 mVideoUrl = it.hd ?: ""
                                 shortDesc = dataObj.programs?.description ?: ""
                                 UpdateIconState(dataObj.isFav ?: false, 0)
@@ -785,9 +787,23 @@ class AboutVideoActivity : BaseAc<ActivityAboutVideoBinding>(), TabLayout.OnTabS
             } ?: run {
                 Uitls.onUnSuccessResponse(400, this@AboutVideoActivity)
             }
-
-
         })
+    }
+
+    private fun setQuality(it: VideoDetailVersions) {
+        if(mResolutionType.equals("hls")){
+            mVideoDisplay = it.hls
+        }else if(mResolutionType.equals("hd")){
+            mVideoDisplay = it.hd
+        }else if(mResolutionType.equals("md")){
+            mVideoDisplay = it.md
+        }else if(mResolutionType.equals("sd")){
+            mVideoDisplay = it.sd
+        }else{
+            mVideoDisplay = it.hd
+        }
+
+        Log.d(TAG, "setQuality: .."+mVideoDisplay)
     }
 
     override fun listnr() {
@@ -908,7 +924,6 @@ class AboutVideoActivity : BaseAc<ActivityAboutVideoBinding>(), TabLayout.OnTabS
                 binding.IconLay.downloadPauseBtn.visibility = View.GONE
                 println("~~OnWorkerCancelByTag::${binding.tvTitleAboutVideo.text.toString()}")
             }
-
 
         }
 
@@ -1035,7 +1050,9 @@ class AboutVideoActivity : BaseAc<ActivityAboutVideoBinding>(), TabLayout.OnTabS
             .setMetadata(movieMetadata)
             /*.setStreamDuration(mSelectedMedia.getDuration() * 1000)*/
             .build()
+
     }
+
 
 }
 

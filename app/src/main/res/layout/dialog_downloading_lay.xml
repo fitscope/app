@@ -37,7 +37,7 @@
         <TextView
             android:id="@+id/tvHD1080_Dwnld_DialogItem"
             style="@style/normaltxt_18sp_Regular"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="45dp"
             android:layout_marginTop="1dp"
             android:gravity="center"
@@ -60,7 +60,7 @@
         <TextView
             android:id="@+id/tvHD720_Dwnld_DialogItem"
             style="@style/normaltxt_18sp_Regular"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="45dp"
             android:layout_marginTop="1dp"
             android:gravity="center"
@@ -81,9 +81,9 @@
             app:layout_constraintTop_toBottomOf="@+id/tvHD720_Dwnld_DialogItem" />
 
         <TextView
-            android:id="@+id/textView17"
+            android:id="@+id/tv540"
             style="@style/normaltxt_18sp_Regular"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="45dp"
             android:layout_marginTop="1dp"
             android:gravity="center"
@@ -101,12 +101,12 @@
             android:background="?android:attr/listDivider"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView17" />
+            app:layout_constraintTop_toBottomOf="@+id/tv540" />
 
         <TextView
-            android:id="@+id/textView18"
+            android:id="@+id/tv360"
             style="@style/normaltxt_18sp_Regular"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="45dp"
             android:layout_marginTop="1dp"
             android:gravity="center"
@@ -124,7 +124,7 @@
             android:background="?android:attr/listDivider"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView18" />
+            app:layout_constraintTop_toBottomOf="@+id/tv360" />
 
         <TextView
             android:id="@+id/tvCancel_DialogItem"

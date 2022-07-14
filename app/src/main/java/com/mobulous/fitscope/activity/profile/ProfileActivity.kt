@@ -10,20 +10,30 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.Window
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.annotation.NonNull
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+import androidx.core.content.edit
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
+import com.mobulous.fitscope.R
 import com.mobulous.fitscope.activity.auth.BaseActivity
 import com.mobulous.fitscope.databinding.ActivityProfileBinding
 import com.mobulous.fitscope.databinding.DialogDownloadingLayBinding
 import com.mobulous.helper.*
+import com.mobulous.helper.Constants.PREF_NAME
+import com.mobulous.helper.Constants.RESOLUTIONTYPE
 
 class ProfileActivity : AppCompatActivity() {
+    private val TAG = "ProfileActivity"
+
     lateinit var bin: ActivityProfileBinding
     private var isGranted = false
+    private var mResolutionType:String?="hd"
     lateinit var broadcastManager: BroadcastReceiver
     private val pickerContent =
         registerForActivityResult(ActivityResultContracts.TakePicturePreview()) {
@@ -89,8 +99,7 @@ class ProfileActivity : AppCompatActivity() {
             bin.tvProfileEmail.text = getString(Enums.UserEmail.toString(), "Not logged in")
             bin.tvSignOutProfile.text = if (getString(
                     Enums.isLogin.toString(),
-                    "false"
-                ) == "true"
+                    "false") == "true"
             ) "Sign Out" else "Sign In"
             if (!Constants.isDefaultProfileSet) {
                 when (PrefUtils.with(this@ProfileActivity)
@@ -109,9 +118,7 @@ class ProfileActivity : AppCompatActivity() {
                     }
                 }
             }
-
         }
-
 
     }
 
@@ -120,8 +127,7 @@ class ProfileActivity : AppCompatActivity() {
             requestForPermission.launch(
                 arrayOf(
                     android.Manifest.permission.CAMERA,
-                    android.Manifest.permission.READ_EXTERNAL_STORAGE
-                )
+                    android.Manifest.permission.READ_EXTERNAL_STORAGE)
             )
         }
         bin.tvSignOutProfile.setOnClickListener {
@@ -155,12 +161,66 @@ class ProfileActivity : AppCompatActivity() {
                 window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
                 setCanceledOnTouchOutside(true)
                 setContentView(view.root)
+
+                val editor = getSharedPreferences(PREF_NAME, MODE_PRIVATE)
+                val resolution = editor.getString(RESOLUTIONTYPE,"")
+                if(resolution!!.isNotEmpty()){
+                    setQuality(resolution!!,view)
+                }else{
+                    view.tvHD720DwnldDialogItem.background = ContextCompat.getDrawable(this@ProfileActivity,R.color.grey)
+                }
+
                 view.tvCancelDialogItem.setOnClickListener {
                     dismiss()
                 }
+
+                view.tvHD1080DwnldDialogItem.setOnClickListener {
+                    mResolutionType= "hls"
+                   getSharedPreferences(Constants.PREF_NAME, MODE_PRIVATE).edit {
+                        putString(Constants.RESOLUTIONTYPE,mResolutionType)
+                        apply()
+                    }
+                    Log.d(TAG, "listnr: "+mResolutionType)
+
+                    dismiss()
+                }
+
+                view.tvHD720DwnldDialogItem.setOnClickListener {
+                    mResolutionType="hd"
+                 getSharedPreferences(Constants.PREF_NAME, MODE_PRIVATE).edit {
+                        putString(Constants.RESOLUTIONTYPE,mResolutionType?:"hd")
+                        apply()
+                    }
+
+                    Log.d(TAG, "listnr: "+mResolutionType)
+                    dismiss()
+                }
+                view.tv540.setOnClickListener {
+                    mResolutionType ="md"
+                   getSharedPreferences(Constants.PREF_NAME, MODE_PRIVATE).edit {
+                        putString(Constants.RESOLUTIONTYPE,mResolutionType?:"hd")
+                        apply()
+                    }
+                    Log.d(TAG, "listnr: "+mResolutionType)
+
+                    dismiss()
+                }
+
+                view.tv360.setOnClickListener {
+                    mResolutionType ="sd"
+                  getSharedPreferences(Constants.PREF_NAME, MODE_PRIVATE).edit {
+                        putString(Constants.RESOLUTIONTYPE,mResolutionType?:"hd")
+                        apply()
+                    }
+                    Log.d(TAG, "listnr: "+mResolutionType)
+
+                    dismiss()
+                }
+
                 show()
 
             }
+
         }
 
         broadcastManager = object : BroadcastReceiver() {
@@ -181,6 +241,20 @@ class ProfileActivity : AppCompatActivity() {
         LocalBroadcastManager.getInstance(this)
             .registerReceiver(broadcastManager, IntentFilter(Constants.explicitBroadCastAction))
 
+    }
+
+    private fun setQuality(type: String, view:  DialogDownloadingLayBinding) {
+        if(type.equals("hls")){
+            view.tvHD1080DwnldDialogItem.background = ContextCompat.getDrawable(this, R.color.grey)
+        }else if(type.equals("hd")){
+            view.tvHD720DwnldDialogItem.background = ContextCompat.getDrawable(this, R.color.grey)
+        }else if(type.equals("md")){
+            view.tv540.background = ContextCompat.getDrawable(this, R.color.grey)
+        }else if(type.equals("sd")){
+            view.tv360.background = ContextCompat.getDrawable(this, R.color.grey)
+        }else{
+            view.tvHD720DwnldDialogItem.background = ContextCompat.getDrawable(this, R.color.white)
+        }
     }
 
     override fun onDestroy() {

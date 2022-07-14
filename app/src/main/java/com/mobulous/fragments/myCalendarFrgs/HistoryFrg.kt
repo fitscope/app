@@ -6,6 +6,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -31,6 +32,8 @@ import com.mobulous.webservices.ServiceBuilder
 
 
 class HistoryFrg : Fragment(), UpComingNdHistoryLisntr {
+
+    private val TAG = "HistoryFrg"
     lateinit var historyAptr: HistoryAptr
     lateinit var viewmodel: CalenderViewModel
     private var selectedPos = 0
@@ -83,6 +86,8 @@ class HistoryFrg : Fragment(), UpComingNdHistoryLisntr {
                             historyLst.removeAt(selectedPos)
                             historyAptr.notifyItemRemoved(selectedPos)
                             historyAptr.notifyItemRangeRemoved(selectedPos, historyLst.size)
+
+
                         } else {
                             Uitls.showToast(
                                 requireContext(),
@@ -139,6 +144,7 @@ class HistoryFrg : Fragment(), UpComingNdHistoryLisntr {
             )
         ).get(CalenderViewModel::class.java)
 
+        Log.d(TAG, "initView: ........"+historyLst.size)
         historyAptr = HistoryAptr(historyLst, this).apply {
             bin.historyRv.layoutManager = LinearLayoutManager(this@HistoryFrg.requireContext())
             bin.historyRv.adapter = this

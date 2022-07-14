@@ -45,6 +45,8 @@ object Constants {
     const val categoryId = "categoryId"
     const val programId = "programId"
 
+    const val PREF_NAME="app_data"
+    const val RESOLUTIONTYPE="resolution"
 
     var savedUserID = "" /*holds the user id from login response*/
     const val InnerObj = ""

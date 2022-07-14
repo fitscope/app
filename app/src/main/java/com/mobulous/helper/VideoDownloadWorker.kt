@@ -50,6 +50,7 @@ class VideoDownloadWorker(val ctx: Context, val params: WorkerParameters) : Work
                 output =
                     FileOutputStream(ctx.filesDir.toString() + "/${inputData.getString("ChapterID")}.mp4")
                 offlineUrl = ctx.filesDir.toString() + "/${inputData.getString("ChapterID")}.mp4"
+
                 val data = ByteArray(4096)
                 var total: Long = 0
                 var count: Int

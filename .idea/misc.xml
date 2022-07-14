@@ -9,9 +9,34 @@
         <entry key="..\:/FitScope/app/src/main/res/layout/custom_calender_lay.xml" value="0.29322916666666665" />
         <entry key="..\:/FitScope/app/src/main/res/layout/custom_video_player.xml" value="0.219921875" />
         <entry key="..\:/FitScope/app/src/main/res/layout/fragment_calendar_frg.xml" value="0.29322916666666665" />
+        <entry key="..\:/MobulousProject/FitScopeApp/fitscope_android/app/src/main/res/drawable/ic_cloud_download_img.xml" value="0.135" />
+        <entry key="..\:/MobulousProject/FitScopeApp/fitscope_android/app/src/main/res/layout/aboutvideo_icon_lay.xml" value="0.16770833333333332" />
+        <entry key="..\:/MobulousProject/FitScopeApp/fitscope_android/app/src/main/res/layout/activity_about_video.xml" value="0.16770833333333332" />
+        <entry key="..\:/MobulousProject/FitScopeApp/fitscope_android/app/src/main/res/layout/activity_base.xml" value="0.16770833333333332" />
+        <entry key="..\:/MobulousProject/FitScopeApp/fitscope_android/app/src/main/res/layout/activity_profile.xml" value="0.16770833333333332" />
+        <entry key="..\:/MobulousProject/FitScopeApp/fitscope_android/app/src/main/res/layout/activity_schedule.xml" value="0.16770833333333332" />
+        <entry key="..\:/MobulousProject/FitScopeApp/fitscope_android/app/src/main/res/layout/child_horizontal_rv.xml" value="0.16770833333333332" />
+        <entry key="..\:/MobulousProject/FitScopeApp/fitscope_android/app/src/main/res/layout/custom_calender_lay.xml" value="0.16770833333333332" />
+        <entry key="..\:/MobulousProject/FitScopeApp/fitscope_android/app/src/main/res/layout/custom_video_player.xml" value="0.16770833333333332" />
+        <entry key="..\:/MobulousProject/FitScopeApp/fitscope_android/app/src/main/res/layout/dailog_complete_lay.xml" value="0.16770833333333332" />
+        <entry key="..\:/MobulousProject/FitScopeApp/fitscope_android/app/src/main/res/layout/dialog_downloading_lay.xml" value="0.16770833333333332" />
+        <entry key="..\:/MobulousProject/FitScopeApp/fitscope_android/app/src/main/res/layout/fragment_about.xml" value="0.16770833333333332" />
+        <entry key="..\:/MobulousProject/FitScopeApp/fitscope_android/app/src/main/res/layout/fragment_calendar_frg.xml" value="0.16770833333333332" />
+        <entry key="..\:/MobulousProject/FitScopeApp/fitscope_android/app/src/main/res/layout/fragment_classes_home_frg.xml" value="0.16770833333333332" />
+        <entry key="..\:/MobulousProject/FitScopeApp/fitscope_android/app/src/main/res/layout/fragment_comment.xml" value="0.16770833333333332" />
+        <entry key="..\:/MobulousProject/FitScopeApp/fitscope_android/app/src/main/res/layout/fragment_downloads_frg.xml" value="0.16770833333333332" />
+        <entry key="..\:/MobulousProject/FitScopeApp/fitscope_android/app/src/main/res/layout/fragment_favorities_frg.xml" value="0.16770833333333332" />
+        <entry key="..\:/MobulousProject/FitScopeApp/fitscope_android/app/src/main/res/layout/fragment_history_frg.xml" value="0.16770833333333332" />
+        <entry key="..\:/MobulousProject/FitScopeApp/fitscope_android/app/src/main/res/layout/fragment_my_library_frg.xml" value="0.16770833333333332" />
+        <entry key="..\:/MobulousProject/FitScopeApp/fitscope_android/app/src/main/res/layout/fragment_my_list_frg.xml" value="0.16770833333333332" />
+        <entry key="..\:/MobulousProject/FitScopeApp/fitscope_android/app/src/main/res/layout/fragment_up_coming_frg.xml" value="0.16770833333333332" />
+        <entry key="..\:/MobulousProject/FitScopeApp/fitscope_android/app/src/main/res/layout/no_playlist_layout.xml" value="0.16770833333333332" />
+        <entry key="..\:/MobulousProject/FitScopeApp/fitscope_android/app/src/main/res/layout/parent_horizontal_rv_view_all.xml" value="0.16770833333333332" />
+        <entry key="..\:/MobulousProject/FitScopeApp/fitscope_android/app/src/main/res/layout/video_player_quality_lay.xml" value="0.16770833333333332" />
+        <entry key="..\:/MobulousProject/FitScopeApp/fitscope_android/app/src/main/res/menu/expanded_controller.xml" value="0.16770833333333332" />
       </map>
     </option>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK" />
 </project>
