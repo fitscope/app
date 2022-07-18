@@ -62,7 +62,6 @@ class UpNextFragment(val upNextDataObj: String, val isCategoryType: Boolean) : F
             e.printStackTrace()
         }
 
-
     }
 
     fun lisnr() {

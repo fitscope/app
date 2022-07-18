@@ -51,12 +51,10 @@ class AboutFragment(private val mVideoOb: String) : Fragment() {
 
                 }
 
-
             }
         } catch (e: Exception) {
             e.printStackTrace()
         }
     }
-
 
 }

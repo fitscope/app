@@ -109,7 +109,7 @@ class ScheduleActivity : AppCompatActivity(), ScheduleSaveListnr {
                             }
 
                         } else {
-                            Uitls.showToast(this, dataObj.message ?: "")
+                          //  Uitls.showToast(this, dataObj.message ?: "")
                         }
                     }
                 }

@@ -753,17 +753,17 @@ class AboutVideoActivity : BaseAc<ActivityAboutVideoBinding>(), TabLayout.OnTabS
 
                             dataObj.videoDetails?.versions?.let {
                                 mduration = dataObj.videoDetails.durationInSeconds.toString()
-                              //  setQuality(it)
+                                setQuality(it)
 
                                 VideoViewController(this@AboutVideoActivity, binding).mVideoSetup(
-                                   /* videoUri = mVideoDisplay ?: ""*/
-                                    videoUri = it.hd ?: "",
+                                    videoUri = mVideoDisplay ?: ""
+                                    /*videoUri = it.hd ?: ""*/,
                                     mduration = dataObj.videoDetails?.durationInSeconds.toString(),
                                     versions = it,
                                     chapterTitle = binding.tvTitleAboutVideo.text.toString()
                                 )
-//                                mVideoUrl = mVideoDisplay ?: ""
-                                mVideoUrl = it.hd ?: ""
+                                mVideoUrl = mVideoDisplay ?: ""
+//                                mVideoUrl = it.hd ?: ""
                                 shortDesc = dataObj.programs?.description ?: ""
                                 UpdateIconState(dataObj.isFav ?: false, 0)
                                 UpdateIconState(dataObj.isSave ?: false, 1)
